@@ -7,7 +7,7 @@ git clone https://github.com/singer0503/NetCoreWebApplication.git
 Max huang 撲克牌 是一個網頁系統範本，用在示範 EF Core來進行 ASP.Net Core MVC的網站系統 本網站使用 .Net Core 2.2來進行開發及編譯
 
  ```bash
-cd maxhuang
+cd NetCoreWebApplication
 docker-compose build
 docker-compose up
  ```
