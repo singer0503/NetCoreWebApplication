@@ -1,0 +1,26 @@
+#docker-compose.yml file
+version: "3"
+services:
+  sql.data:
+    image: microsoft/mssql-server-linux
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=reallyStrongPwd123
+    ports:
+      - "1433:1433"
+    container_name: sql.data
+    depends_on:
+      - maxhuang
+
+  maxhuang:
+    image: maxhuang
+    environment:
+      #- ASPNETCORE_URLS=http://0.0.0.0:80  # This is recommended for MacOS or Pure Linux, boot2docker using maybe can not connecting.
+      - ConnectionString=Server=sql.data;Database=PershingDB;Persist Security Info=True;User ID=sa;Password=reallyStrongPwd123;
+      # Additional environment variables for this service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    container_name: maxhuang
