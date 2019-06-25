@@ -8,7 +8,7 @@ docker-compose build
 docker-compose up
  ```
 
-Mac OS 使用瀏覽器開啟<br>
+Linux / Mac OS 使用瀏覽器開啟<br>
 http://localhost:80
 
 Windows 使用瀏覽器開啟, 連接到 boot2docker ip <br>
